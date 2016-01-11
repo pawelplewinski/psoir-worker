@@ -1,0 +1,15 @@
+language: python
+python:
+- '3.4'
+- pypy
+before_install: pip install -r requirements.txt
+deploy:
+  provider: s3
+  access_key_id: AKIAJQNKNIS56HLWPF6A
+  secret_access_key:
+    secure: ErhE4T2lGQFNrhlCPXFt6hsz7ebAfSQ6MIrvA0BY++caoVOPS605kJgu9zaJC/utWX4VJDuQjl8Umx5Oahq/iGLzd70MQTXtaBiSP4hARKho0xzWZNEBGbttyn0gLJp+JjBogpIXODYtQIg9WOLC3zUTxQvv5NFmb9Z/jhzVW2zWBlII5mAm7b4Q3NC7quFg8Qhre1se2KMko08y4DoEbwAVbUEqV/VsPDQ0VPz1f9JR7hV309E5hKoTa7zScqwnJzdIVdCgLAeRdUwRgoX1XF9hWvGtZDAFT/vBZjgwEnqNrnFVtqTyD/2pH/ROe3CJT1yJHbDch1XOn+9I48U5yk9qDskuund42NALkU3L2h9H6W83JNv99RtwwTnFk2DY5vPqen4Dm68DpLK8BGllvLPGPXb3GpUjbu3q3WOCXz33Obp0PwBd11InR6Wqg9B/YQkjKa2mc4eTUqxj/TIIcFDTQWtyf5Z9QJbQozkZEVfydbxJ93SMjJ6p56UjT4gI/51079o0Dx8YthLVHGEBuSIk1uRxLqed7eTf3qRqJR6l7pPWg189bmlMcQVcJhxkCZGfF3bD6/2MWXxRiZzMZF6fYRQRdIJJ4zPO9vr9uXbjvLlhy8N+0L9/UefBm8cGAPrbaySfi+AkR8vBytVW5UYGnRxIWarVznkoKbVq5iU=
+  bucket: pawelplewinski-deploy
+  upload-dir: worker
+  acl: public_read
+  on:
+    repo: pawelplewinski/psoir-worker
